@@ -3,11 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Happy Birthday Gopiesree</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="music-controls.css" />
+    <link rel="stylesheet" href="custom-effects.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   </head>
   <body>
-    <div class="container">
+    <audio id="bgMusic" loop>
+      <source src="audio.mp3" type="audio/mpeg">
+    </audio>
+    
+    <div class="music-controls">
+      <button id="toggleMusic" class="music-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" fill="currentColor"/></svg>
+      </button>
+    </div>
+    
+    <div class="container animate__animated animate__fadeIn">
       <div class="sprite-wrapper">
         <div class="book">
           <!--  Carousel container -->
@@ -21,45 +34,29 @@
                   <div>
                     <p style="margin: 0; text-indent: 1rem">
                       Six years of friendship, countless memories, and here we are celebrating
-                      another beautiful year of your life! 💜 From our first meeting to now,
-                      watching you chase your dreams in aeronautical engineering has been nothing
-                      short of inspiring.
+                      another beautiful year of your life! 💜 <br>From our first meeting to now,
+                      watching you chase your dreams in aeronautical <br> engineering has been nothing
+                      short of <br> inspiring.
                     </p><br><br>
                     <center>
                       <img
                         src="https://media.tenor.com/0-M-_QQY4eQAAAAj/pixel-heart.gif"
                         alt=""
                         style="width: 70%"
+                        class="animate__animated animate__pulse animate__infinite float"
                       />
                     </center>
                   </div>
                 </div>
                 <div class="page right-page">
                   <div>
-                    <!-- <p style="margin: 0; text-indent: 1rem">
-                  🚀 Core Features
-                </p>
-                <p style="margin: 0; text-indent: 1rem">
-                  📚 Book-like Page Flipping
-                </p> -->
                     <p style="margin: 0; text-indent: 1rem">
                       Your love for books has always amazed me. Remember all those late-night book
                       discussions and your endless recommendations? Each one opened up new worlds
                       for me.<br />
-                      "From book recs to dream talks, every moment has been precious" 📚
+                      <span class="glow-text">"From book recs to dream talks, every moment has been precious" 📚</span>
                     </p>
                     <br />
-                    <!-- <p style="margin: 0; text-indent: 1rem">🔧 Technologies Used</p>
-                <ul style="padding: 0; list-style: auto; list-style-position: inside; margin: 0">
-                  <li>Scroll Snap</li>
-                  <li>View Timeline + Scroll Timeline</li>
-                  <li>Sprite Sheets (mod, round)</li>
-                  <li>Dynamic Sizing</li>
-                  <li>Dynamic Sprite Calculation</li>
-                </ul><br> -->
-                    <!-- <p style="margin: 0; text-indent: 1rem">
-                  🧠 Dynamic Behavior
-                </p> -->
                     <p style="margin: 0; text-indent: 1rem">
                       Your passion for aviation and the way your eyes light up when you talk about
                       planes - it's contagious! ✈️ "One day I'll see you fly a plane and I'll scream
@@ -69,6 +66,7 @@
                         src="https://media.tenor.com/PsKa1BOxLvYAAAAj/plane-avion.gif"
                         alt=""
                         style="width: 70%"
+                        class="animate__animated animate__bounce animate__infinite"
                       />
                     </center>
                     </p>
@@ -82,13 +80,14 @@
                   <div>
                     <p style="margin: 0">
                      You know what's special about you? It's how you never stop learning, growing, and inspiring others along the way.
-                    "You'll always have a safe landing in my heart" 💜</p>
+                    <span class="glow-text">"You'll always have a safe landing in my heart" 💜</span></p>
                     </p>
                     <center>
                       <img
                         src="gops.jpg"
                         alt="goppiiii"
-                        style="width: 70%"
+                        style="width: 70%;"
+                        class="animate__animated animate__zoomIn enhanced-image"
                       />
                     </center>
                   </div>
@@ -97,7 +96,7 @@
                   <div>
                     <p style="margin: 0">
                         <p>Miss you lotz Mineyy! 🤗</p>
-                        <p>Happy Birthday! 🎂</p>
+                        <p >Happy Birthday! 🎂</p>
                         <p>Love,<br>Gayathri</p>
                     </p>
                     <br />
@@ -112,5 +111,31 @@
         </div>
       </div>
     </div>
+    
+    <script>
+      // Add music toggle functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const music = document.getElementById('bgMusic');
+        const toggleBtn = document.getElementById('toggleMusic');
+        
+        // Auto play music when page loads (if allowed by browser)
+        try {
+          music.play();
+        } catch (e) {
+          console.log('Auto-play prevented by browser. User must interact first.');
+        }
+        
+        toggleBtn.addEventListener('click', function() {
+          if (music.paused) {
+            music.play();
+            toggleBtn.classList.add('playing');
+          } else {
+            music.pause();
+            toggleBtn.classList.remove('playing');
+          }
+        });
+      });
+    </script>
+    <script src="confetti.js"></script>
   </body>
 </html>

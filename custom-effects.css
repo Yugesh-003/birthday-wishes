@@ -1,0 +1,73 @@
+/* Custom effects for the birthday project */
+
+/* Floating animation for images */
+.float {
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Glowing effect for special text */
+.glow-text {
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #9470dc, 0 0 20px #9470dc;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #9470dc, 0 0 20px #9470dc;
+  }
+  to {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #9470dc, 0 0 40px #9470dc;
+  }
+}
+
+/* Enhanced image styles */
+.enhanced-image {
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.enhanced-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* Confetti background */
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background-color: #9470dc;
+  opacity: 0.7;
+  animation: confetti-fall 5s linear infinite;
+  z-index: -1;
+}
+
+.confetti:nth-child(2n) {
+  background-color: #c084fc;
+  width: 7px;
+  height: 7px;
+}
+
+.confetti:nth-child(3n) {
+  background-color: #e5e6fa;
+  width: 12px;
+  height: 12px;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}

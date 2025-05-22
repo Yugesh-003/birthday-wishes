@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Gopiesree</title>
+    <link rel="stylesheet" href="landing.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <!-- Sparkle elements -->
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    
+    <div class="container animate__animated animate__fadeIn">
+        <h1 class="animate__animated animate__pulse animate__infinite">Happy Birthday Gopiesree</h1>
+        <button id="enterBtn" class="enter-btn animate__animated animate__heartBeat animate__delay-1s">Enter</button>
+    </div>
+    
+    <script>
+        document.getElementById('enterBtn').addEventListener('click', function() {
+            this.textContent = '';
+            this.classList.add('expanded');
+            
+            // Play a transition sound if needed
+            // const audio = new Audio('transition.mp3');
+            // audio.play();
+            
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }); // Redirect after 1 second
+        });
+    </script>
+</body>
+</html>
